@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title >Stock Price Predection</title>
+    <style>
+        #banner
+        body{
+        background-image:url("{{ url_for('static', filename='IMG/bg.jpg') }})");
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        background-size:100% 100%;
+        }
+        input[type="submit"]{
+            background-color: #ECF5FF;
+            color: #FFFFFF;
+            border-radius: 20px;
+            height: 30px;
+            width: 300px
+        }
+    </style>
+</head>
+<body>
+    <center>
+            <img src="{{ user_image }}" alt="HTML5 Icon" height="100">
+    <fieldset style="border: 7px solid #F37622; width: 30px;height: 500px;background-color:#E7F2FF;">
+    <legend align="center" style="color:#F37622;" > <b>Enter the details for price predection</b></legend>
+    <h1  style="color:#266ABB;" >Stock Price Predection</h1>
+    <form action="/predict" method="post" >
+        <lable style="color:#266ABB;"  ><b>Company Name/Stock Name</b></lable><br>
+        <input name="company_name"><br><br>
+        <lable style="color:#266ABB;" ><b>Buying Date</lable></b><br>
+        <input type="text" name="start_date" size="50"><br><br>
+
+        <lable style="color:#266ABB;" >Sell Date</lable><br>
+        <input type="text" name="end_date" size="50"><br><br>
+
+        <lable style="color:#266ABB;" >No. of Stocks</lable><br>
+        <input type="text" name="no_of_stock" size="30"><br><br>
+
+<!--        <lable>Stock name</lable><br>-->
+<!--        <input type="text" name="ticker"><br><br>-->
+
+        <input style="color:#266ABB;" type="submit"  value="Predict the price"><br><br>
+        {{ result1}}
+    </fieldset>
+    </form>
+    </center>
+</body>
+</html>
